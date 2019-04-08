@@ -8,7 +8,7 @@ module.exports = {
       options: {
         mdPlugins: [],
         hastPlugins: [],
-        gatsbyRemarkPlugins: [],
+        gatsbyRemarkPlugins: [{ resolve: `gatsby-remark-attr` }],
       },
     },
     {
