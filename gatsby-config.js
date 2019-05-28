@@ -3,8 +3,10 @@ module.exports = {
     title: 'Gatsby Default Starter',
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         mdPlugins: [],
         hastPlugins: [],

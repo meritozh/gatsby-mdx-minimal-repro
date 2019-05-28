@@ -16,9 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
                       name
                     }
                   }
-                  code {
-                    scope
-                  }
+                  body
                 }
               }
             }
@@ -44,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    node: { fs: 'empty' },
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },

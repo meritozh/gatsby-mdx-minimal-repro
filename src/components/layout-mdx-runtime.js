@@ -1,15 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
-import { MDXProvider } from '@mdx-js/tag'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 
 import Header from './header'
 
 export default ({ data }) => (
-  <MDXProvider components={{}}>
+  <>
     <Header siteTitle={data.site.siteMetadata.title} />
-    <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
-  </MDXProvider>
+    <MDXRenderer>{data.mdx.body}</MDXRenderer>
+  </>
 )
 
 export const pageQuery = graphql`
@@ -21,9 +20,7 @@ export const pageQuery = graphql`
     }
     mdx(id: { eq: $id }) {
       id
-      code {
-        body
-      }
+      body
     }
   }
 `
